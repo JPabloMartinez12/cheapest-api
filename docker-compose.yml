@@ -27,6 +27,8 @@ services:
     ports:
       - "${LOGISTICA_PORT:-3001}:3001"
     environment:
+      DB_SSL: "false"
+      DB_SYNCHRONIZE: "true"
       NODE_ENV: ${NODE_ENV:-production}
       DB_HOST: postgres
       DB_PORT: 5432
@@ -54,6 +56,8 @@ services:
       DB_USERNAME: ${DB_USERNAME:-postgres}
       DB_PASSWORD: ${DB_PASSWORD:-postgres}
       DB_NAME: ${DB_NAME:-cheapest}
+      DB_SSL: "false"
+      DB_SYNCHRONIZE: "true"
       LOGISTICA_BASE_URL: http://logistica:3001
       PORT: 3002
     depends_on:
@@ -78,6 +82,8 @@ services:
       DB_USERNAME: ${DB_USERNAME:-postgres}
       DB_PASSWORD: ${DB_PASSWORD:-postgres}
       DB_NAME: ${DB_NAME:-cheapest}
+      DB_SSL: "false"
+      DB_SYNCHRONIZE: "true"
       LOGISTICA_BASE_URL: http://logistica:3001
       PORT: 3003
     depends_on:
